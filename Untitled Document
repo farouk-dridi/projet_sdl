@@ -1,0 +1,28 @@
+void acceleration(personnage *p,Uint32 dt)
+{
+    
+        if (I.right == 1)
+        {
+            hero->xStep = 0.5 * hero->velocity * 2.2 * 2.2 + hero->speed * 2.2;//dt²= dt * dt,
+            hero->heroPos.x += hero->xStep;// xstep: combien le perso va avancer , combien de x
+            if (hero->velocity < 40)
+            {
+                hero->velocity += 0.5;
+            }
+        }
+
+        if (I.left == 1)
+        {
+            hero->xStep = 0.5 * hero->velocity * 2.2 * 2.2 + hero->speed * 2.2;
+            hero->heroPos.x -= hero->xStep;
+            if (hero->velocity < 40)
+            {
+                hero->velocity += 0.5;
+            }
+        }
+    
+    if (I.right == 0 && I.left == 0)
+    {
+        hero->velocity = 0;
+    }
+}
